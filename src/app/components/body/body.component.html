@@ -1,0 +1,43 @@
+	
+	
+<app-filters></app-filters>
+
+	<div class="section-table">
+		<div class="section-table-container">
+			<table class="content-table">
+				<thead>
+					<tr>
+                    <th></th>
+						<th>Foto</th>
+						<th>Nombre</th>
+						<th>Apellido paterno</th>
+						<th>Apellido materno</th>
+                        <th>Correo</th>
+						<th>Rol</th>
+						<th>Status</th>
+						<th></th>
+						<th></th>					
+					</tr>
+				</thead>
+				<tbody cdkDropList (cdkDropListDropped)="onDropped($event)">
+					<tr *ngFor="let user of users" cdkDrag >
+                    <td><fa-icon [icon]="faGripVertical"></fa-icon></td>
+						<td><app-avatar [avatar]="user.picture" ></app-avatar></td>
+						<td>{{user.name}}</td>
+						<td>{{user.fathersLastName}}</td>
+						<td>{{user.mothersLastName}}</td>
+						<td>{{user.email}}</td>
+						<td><select >
+   						<option  *ngFor="let type of roles" [value]="user.roleId">{{type.position}}</option>
+						</select> </td>
+						<td><app-switch [user]="user.active"></app-switch></td>
+						 <td class="cursor" (click)="remove(user)"><fa-icon class="color-icon" [icon]="faTrashAlt"></fa-icon></td>
+						  
+					</tr>
+					
+				</tbody>
+			</table>
+		
+		</div>
+		
+	</div>

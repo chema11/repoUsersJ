@@ -1,0 +1,24 @@
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-left: 5%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+   }
+  span{
+
+    height: 25px;
+  width: 96px;
+  color: #FFFFFF;
+  font-family: "Circular Std";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 25px;
+  }
+
+ 
